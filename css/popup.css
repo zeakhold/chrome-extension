@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 430px;
+    font-family: Hiragino Sans GB,微软雅黑,黑体,Arial,sans-serif;
+}
+
+#app {
+    text-align: center;
+}
+
+p {
+    margin-top: 10px;
+}
+
+table {
+    margin: 10px auto;
+    border-collapse: collapse;
+    border: 1px solid #69c;
+}
+
+table th {
+    color: #039;
+    border-bottom: 1px dashed #69c;
+    padding: 12px 17px;
+}
+
+table td {
+    color: #669;
+    padding: 7px 17px;
+    white-space: nowrap;
+}
+
+table tbody tr:hover td {
+    color: #339;
+    background: #d0dafd;
+}
+
+#city {
+    font-size: 24px;
+}

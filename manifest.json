@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "天气预报",
+  "version": "1.0.1",
+  "description": "从零开始制作一个Chrome天气预报插件",
+  "icons": {
+    "16": "img/icon16.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "img/icon16.png",
+      "48": "img/icon48.png",
+      "128": "img/icon128.png"
+    },
+    "default_title": "天气预报",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "background": {
+    "page": "background.html"
+  }
+}
