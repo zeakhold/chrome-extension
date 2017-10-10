@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "天气预报",
-  "version": "1.0.1",
-  "description": "从零开始制作一个Chrome天气预报插件",
+  "version": "1.1.0",
+  "description": "Chrome天气预报插件，提供六天天气预报(包括昨天)，天气、温度、风速及天气质量",
   "icons": {
     "16": "img/icon16.png",
     "48": "img/icon48.png",
