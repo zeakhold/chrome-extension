@@ -1,13 +1,14 @@
 # Chrome天气预报插件 :sunny: 
-一个可以获取展示所在地天气预报的Chrome插件
+[![Latest Version](https://img.shields.io/badge/Latest_Version-1.1.2-blue.svg)](https://codeload.github.com/zeakhold/chrome-extension/zip/master) [![Chrome Web Store](https://img.shields.io/badge/Install-_Chrome_Web_Store-brightgreen.svg)](https://chrome.google.com/webstore/detail/%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5/coconclcbdjgdligkbpibhddiclghjoj) [![CRX](https://img.shields.io/badge/Download-_CRX-brightgreen.svg)](https://raw.githubusercontent.com/zeakhold/chrome-extension/master/chrome-extension.crx)
+ 
+一款Chrome天气预报插件，提供六天天气预报(包括昨天)，天气、温度、风速及当天空气质量。
 
 ![](./screenshot/Screenshot_1.jpg)
 
+
 ## 安装插件
-1. 下载本项目中的[chrome-extension.crx](https://github.com/zeakhold/chrome-extension/blob/master/chrome-extension.crx)文件到电脑中
-2. 浏览器地址栏输入：chrome://extensions/
-3. 将crx文件直接拖放到Chrome浏览器扩展页面
-4. 按照提示同意，即可完成本扩展的安装
+前往[Chrome Web Store](https://chrome.google.com/webstore/detail/%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5/coconclcbdjgdligkbpibhddiclghjoj) 安装<天气预报>
+
     
 
 ## 开发插件
