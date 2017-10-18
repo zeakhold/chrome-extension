@@ -25,7 +25,7 @@ window.onload = () =>{
 
     function ajax(url, method, param, callback) {
 
-        var xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
 
         xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {

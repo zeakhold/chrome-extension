@@ -17,9 +17,6 @@
     "default_title": "天气预报",
     "default_popup": "popup.html"
   },
-  "background": {
-    "page": "background.html"
-  },
   "permissions": [
     "http://node.zeakhold.com/*"
   ]
