@@ -1,5 +1,5 @@
 window.onload = () =>{
-    let $location = document.getElementById('location'),
+    let $banner = document.getElementById('banner'),
         $table = document.getElementById('table');
 
     ajax('http://node.zeakhold.com/weather','GET',null,(responseText)=>{
@@ -10,7 +10,7 @@ window.onload = () =>{
             yesterday = data.data.yesterday;;
 
         //填充头部信息
-        $location.innerHTML = `<span id="city">${data.city}</span> ` + forecast[0].type + '&nbsp;&nbsp; 空气质量:' + data.data.quality + '&nbsp; 实时温度:' + data.data.wendu;
+        $banner.innerHTML = `<span id="city">${data.city}</span> ` + forecast[0].type + '&nbsp;&nbsp; 空气质量:' + data.data.quality + '&nbsp; 实时温度:' + data.data.wendu;
 
         //填充昨天天气
         $table.innerHTML += `<tr><td>${yesterday.date.split('星')[0]}(昨天)</td><td>${yesterday.type}</td><td>${yesterday.low.split(' ')[1] + '~' + yesterday.high.split(' ')[1]}</td><td>${yesterday.fl}</td></tr>`;

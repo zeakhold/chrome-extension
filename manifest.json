@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "天气预报",
-  "version": "1.1.2",
-  "description": "一款Chrome天气预报插件，提供六天天气预报(包括昨天)，天气、温度、风速及当天空气质量",
+  "version": "1.2.0",
+  "description": "一款Chrome天气预报插件，提供六天天气预报(包括昨天)，显示天气、温度、风速及当天空气质量等信息。",
   "icons": {
     "16": "img/icon16.png",
     "48": "img/icon48.png",
@@ -17,8 +17,10 @@
     "default_title": "天气预报",
     "default_popup": "popup.html"
   },
-  "options_page": "options.html",
   "background": {
     "page": "background.html"
-  }
+  },
+  "permissions": [
+    "http://node.zeakhold.com/*"
+  ]
 }
