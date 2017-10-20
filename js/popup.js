@@ -1,23 +1,22 @@
 window.onload = () =>{
-    let $banner = document.getElementById('banner'),
-        $table = document.getElementById('table');
+    let $header = document.getElementById('header'),
+        $tbody = document.getElementById('tbody');
 
     ajax('http://node.zeakhold.com/weather','GET',null,(responseText)=>{
         let data = JSON.parse(responseText);
-        console.log(data)
 
         let forecast = data.data.forecast,
             yesterday = data.data.yesterday;;
 
         //填充头部信息
-        $banner.innerHTML = `<span id="city">${data.city}</span> ` + forecast[0].type + '&nbsp;&nbsp; 空气质量:' + data.data.quality + '&nbsp; 实时温度:' + data.data.wendu;
+        $header.innerHTML = `<span id="city">${data.city}</span> ` + forecast[0].type + '&nbsp;&nbsp; 空气质量:' + data.data.quality + '&nbsp; 实时温度:' + data.data.wendu;
 
         //填充昨天天气
-        $table.innerHTML += `<tr><td>${yesterday.date.split('星')[0]}(昨天)</td><td>${yesterday.type}</td><td>${yesterday.low.split(' ')[1] + '~' + yesterday.high.split(' ')[1]}</td><td>${yesterday.fl}</td></tr>`;
+        $tbody.innerHTML += `<tr><td>${yesterday.date.split('星')[0]}(昨天)</td><td>${yesterday.type}</td><td>${yesterday.low.split(' ')[1] + '~' + yesterday.high.split(' ')[1]}</td><td>${yesterday.fl}</td></tr>`;
 
         //填充预测天气
         forecast.forEach((item,i) => {
-            $table.innerHTML += `<tr><td>${item.date}</td><td>${item.type}</td><td>${item.low.split(' ')[1] + '~' + item.high.split(' ')[1]}</td><td>${item.fl}</td></tr>`
+            $tbody.innerHTML += `<tr><td>${item.date}</td><td>${item.type}</td><td>${item.low.split(' ')[1] + '~' + item.high.split(' ')[1]}</td><td>${item.fl}</td></tr>`
         })
 
     })
