@@ -1,45 +1,37 @@
-const http = require('http');
-const qs = require('querystring');
+const
+    http = require('http'),
+    qs = require('querystring'),
+    request = require('request-promise-native');
 
-const hostname = '127.0.0.1';
-const port = 3333;
+const
+    hostname = '127.0.0.1',
+    port = 3333;
 
 
 const server = http.createServer((req, res) => {
 
     if (req.url == '/weather') { //过滤其它请求
 
-        http.get(`http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip=${req.headers['x-real-ip']}`, (res2) => {
-
-            res2.setEncoding('utf8');
-            let rawData = '';
-            res2.on('data', (chunk) => {
-                rawData += chunk;
-            });
-            res2.on('end', () => {
-                const parsedData = JSON.parse(rawData);
-                console.log(parsedData.city)
-                const url = "http://www.sojson.com/open/api/weather/json.shtml?city=" + qs.escape(parsedData.city);
-
-                http.get(url, (res3) => {
-                    res3.setEncoding('utf8');
-                    let rawData2 = '';
-                    res3.on('data', (chunk) => {
-                        rawData2 += chunk;
-                    });
-                    res3.on('end', () => {
+        request(`http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip=${req.headers['x-real-ip']}`)
+            .then((body) => {
+                const parsedData = JSON.parse(body);
+                // console.log(`当前城市: ${parsedData.city}`)
+                return parsedData.city;
+            })
+            .then((city) => {
+                request(`http://www.sojson.com/open/api/weather/json.shtml?city=${qs.escape(city)}`)
+                    .then(body2 => {
+                        // console.log(`body2: ${body2}`)
                         res.statusCode = 200;
                         res.setHeader('Content-Type', 'application/json;charset=UTF-8');
                         res.setHeader('Access-Control-Allow-Origin', '*');
-                        res.end(rawData2);
-                    });
-                }).on('error', (e) => {
-                    console.error(`Got error: ${e.message}`);
-                });
-            });
-        }).on('error', (e) => {
-            console.error(`Got error: ${e.message}`);
-        });
+                        res.end(body2);
+                    })
+            })
+            .catch((err) => {
+                console.log(err);
+                throw err;
+            })
 
     }else {
         res.statusCode = 200;
