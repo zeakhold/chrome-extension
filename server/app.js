@@ -19,21 +19,21 @@ const server = http.createServer((req, res) => {
                 return parsedData.city;
             })
             .then((city) => {
-                request(`http://www.sojson.com/open/api/weather/json.shtml?city=${qs.escape(city)}`)
-                    .then(body2 => {
-                        // console.log(`body2: ${body2}`)
-                        res.statusCode = 200;
-                        res.setHeader('Content-Type', 'application/json;charset=UTF-8');
-                        res.setHeader('Access-Control-Allow-Origin', '*');
-                        res.end(body2);
-                    })
+                return request(`http://www.sojson.com/open/api/weather/json.shtml?city=${qs.escape(city)}`)
+            })
+            .then(body2 => {
+                // console.log(`body2: ${body2}`)
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json;charset=UTF-8');
+                res.setHeader('Access-Control-Allow-Origin', '*');
+                res.end(body2);
             })
             .catch((err) => {
                 console.log(err);
                 throw err;
             })
 
-    }else {
+    } else {
         res.statusCode = 200;
         res.end('Hello~');
     }
