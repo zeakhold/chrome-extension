@@ -12,6 +12,7 @@ const server = http.createServer((req, res) => {
 
     if (req.url == '/weather') { //过滤其它请求
 
+        // Step one: 请求得到ip地址
         request(`http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip=${req.headers['x-real-ip']}`)
             .then((body) => {
                 const parsedData = JSON.parse(body);
@@ -19,6 +20,7 @@ const server = http.createServer((req, res) => {
                 return parsedData.city;
             })
             .then((city) => {
+                // Step two: 请求得到天气信息
                 return request(`http://www.sojson.com/open/api/weather/json.shtml?city=${qs.escape(city)}`)
             })
             .then(body2 => {

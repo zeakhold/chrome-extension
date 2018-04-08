@@ -1,0 +1,15 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "这是服务端文件，使用NodeJS对天气接口进行封装处理，并且使用Nginx反向代理，从而解决CSP的安全问题。",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request-promise-native": "^1.0.5"
+  }
+}
