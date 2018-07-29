@@ -1,5 +1,5 @@
 # Chrome天气预报插件 :sunny: 
-[![Latest Version](https://img.shields.io/badge/Latest_Version-1.2.1-blue.svg)](https://codeload.github.com/zeakhold/chrome-extension/zip/master) [![Chrome Web Store](https://img.shields.io/badge/Install-_Chrome_Web_Store-brightgreen.svg)](https://chrome.google.com/webstore/detail/%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5/coconclcbdjgdligkbpibhddiclghjoj) [![CRX](https://img.shields.io/badge/Download-_CRX-brightgreen.svg)](https://raw.githubusercontent.com/zeakhold/chrome-extension/master/chrome-extension.crx)
+[![Latest Version](https://img.shields.io/badge/Latest_Version-1.3.0-blue.svg)](https://codeload.github.com/zeakhold/chrome-extension/zip/master) [![Chrome Web Store](https://img.shields.io/badge/Install-_Chrome_Web_Store-brightgreen.svg)](https://chrome.google.com/webstore/detail/%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5/coconclcbdjgdligkbpibhddiclghjoj) [![CRX](https://img.shields.io/badge/Download-_CRX-brightgreen.svg)](https://raw.githubusercontent.com/zeakhold/chrome-extension/master/chrome-extension.crx)
  
 一款Chrome天气预报插件，提供六天天气预报(包括昨天)，显示天气、温度、风速及当天空气质量等信息。
 
