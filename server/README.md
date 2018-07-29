@@ -1,12 +1,12 @@
 # 文件说明
-    这是服务端文件，使用NodeJS对天气接口进行封装处理，并且使用Nginx反向代理，从而解决CSP的安全问题。
+这是服务端文件，使用NodeJS对天气接口进行封装处理，并且使用Nginx反向代理，从而解决CSP的安全问题。
     
-PS:不打算自己搭建的可以忽略本文件夹，直接使用我的天气API就行了：http://node.zeakhold.com/weather
+测试接口：http://node.zeakhold.com/weather
 
 
 ## 程序逻辑
-- 首先使用新浪的接口获取访问者IP对应的地理位置（所在城市）
-- 然后用地理位置作为参数去请求sojson.com的天气预报接口
+- 首先使用[淘宝的接口](http://ip.taobao.com/service/getIpInfo.php?ip=115.159.152.210)获取访问者IP对应的地理位置（所在城市）
+- 然后用地理位置作为参数去请求[sojson.com](https://www.sojson.com/blog/234.html)的天气预报接口
 - 最后将获取到的天气信息返回给访问端
 
 
@@ -15,6 +15,11 @@ PS:不打算自己搭建的可以忽略本文件夹，直接使用我的天气AP
 
     $ npm install forever -g
     $ forever start app.js
+
+
+Ps.可以指定app.js中的日志信息和错误日志输出文件，-o 就是console.log输出的信息，-e 就是console.error输出的信息：  
+
+    forever start -o out.log -e err.log app.js  
 
 
 ## Nginx配置
