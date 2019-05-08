@@ -1,7 +1,7 @@
 # 文件说明
 这是服务端文件，使用NodeJS对天气接口进行封装处理，并且使用Nginx反向代理，从而解决CSP的安全问题。
     
-测试接口：http://node.zeakhold.com/weather
+测试接口：http://node.susamko.com/weather
 
 
 ## 程序逻辑
@@ -26,7 +26,7 @@ Ps.可以指定app.js中的日志信息和错误日志输出文件，-o 就是co
 
     server {
         listen	80;
-        server_name  node.zeakhold.com;
+        server_name  node.susamko.com;
     
         location / {
             proxy_pass http://localhost:3333;

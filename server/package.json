@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "request-promise-native": "^1.0.5"
+    "axios": "^0.18.0"
   }
 }

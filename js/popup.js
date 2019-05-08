@@ -2,7 +2,7 @@ window.onload = () =>{
     let $header = document.getElementById('header'),
         $tbody = document.getElementById('tbody');
 
-    ajax('http://node.zeakhold.com/weather','GET',null,(responseText)=>{
+    ajax('http://node.susamko.com/weather','GET',null,(responseText)=>{
         let data = JSON.parse(responseText);
 
         let forecast = data.data.forecast,
